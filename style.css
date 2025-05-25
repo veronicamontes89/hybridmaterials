@@ -5,22 +5,23 @@ body {
     padding: 0;
     line-height: 1.6;
 }
-header {
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #004080;
     color: white;
-    padding: 1em;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+.logo-left img,
+.logo-right img {
+    height: 60px;
+    margin: 5px;
+}
+.center-text {
     text-align: center;
-}
-.logos-header {
-    text-align: center;
-}
-.logos {
-    margin-bottom: 10px;
-}
-.logos img {
-    height: 50px;
-    margin: 0 10px;
-    vertical-align: middle;
+    flex: 1 1 300px;
 }
 nav {
     background: #eee;

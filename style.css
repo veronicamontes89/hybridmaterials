@@ -11,10 +11,16 @@ header {
     padding: 1em;
     text-align: center;
 }
-.logo {
-    max-height: 60px;
-    display: block;
-    margin: 0 auto 10px;
+.logos-header {
+    text-align: center;
+}
+.logos {
+    margin-bottom: 10px;
+}
+.logos img {
+    height: 50px;
+    margin: 0 10px;
+    vertical-align: middle;
 }
 nav {
     background: #eee;

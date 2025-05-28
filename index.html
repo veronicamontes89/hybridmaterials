@@ -87,34 +87,25 @@
 <p>© 2025 Hybrid Materials Group – Designed by Verónica Montes García</p>
 </footer>
 <script>
-fetch('publications.html')
+fetch('news.html')
   .then(response => response.text())
   .then(data => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, 'text/html');
-    const publications = doc.querySelectorAll('p');
-    const pubList = document.querySelector('.pub-list');
-    if (!pubList) return;
+    const newsItems = doc.querySelectorAll('.news-item');
+    const newsList = document.querySelector('.news-list');
+    if (!newsList) return;
 
-    pubList.innerHTML = ''; // Limpiar lo anterior
+    newsList.innerHTML = ''; // Limpiar lo anterior
 
     let count = 0;
-    for (let i = 0; i < publications.length && count < 3; i++) {
-      const p = publications[i];
-      const text = p.textContent.trim();
-      if (!/^\d+\./.test(text)) continue; // Solo si empieza con número
-
-      const link = p.querySelector('a');
+    for (let i = 0; i < newsItems.length && count < 3; i++) {
+      const item = newsItems[i];
+      const date = item.querySelector('.news-date')?.textContent || '';
+      const content = item.querySelector('.news-content')?.textContent || '';
       const li = document.createElement('li');
-      li.textContent = text.replace('[Read publication]', '').trim();
-      if (link) {
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.textContent = ' [Read publication]';
-        a.target = '_blank';
-        li.appendChild(a);
-      }
-      pubList.appendChild(li);
+      li.innerHTML = `<strong>${date}:</strong> ${content}`;
+      newsList.appendChild(li);
       count++;
     }
   });

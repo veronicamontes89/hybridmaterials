@@ -100,8 +100,11 @@ fetch('publications.html')
 
     let count = 0;
     for (let i = 0; i < publications.length && count < 3; i++) {
-      const text = publications[i].textContent;
-      const link = publications[i].querySelector('a');
+      const p = publications[i];
+      const text = p.textContent.trim();
+      if (!/^\d+\./.test(text)) continue; // Solo si empieza con número
+
+      const link = p.querySelector('a');
       const li = document.createElement('li');
       li.textContent = text.replace('[Read publication]', '').trim();
       if (link) {

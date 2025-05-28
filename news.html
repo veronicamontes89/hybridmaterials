@@ -1,41 +1,70 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>News – Hybrid Materials Group</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
+<meta charset="utf-8"/>
+<title>Home – Hybrid Materials Group</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 2em;
     }
-    h1 {
-      color: #004080;
-      text-align: center;
+    .sidebar {
+      width: 25%;
+      background: #f7f7f7;
+      padding: 1em;
+      border-right: 1px solid #ccc;
     }
-    .news-item {
-      margin-bottom: 2em;
-      padding-bottom: 1em;
-      border-bottom: 1px solid #ccc;
+    .main-content {
+      width: 75%;
     }
-    .news-date {
-      font-weight: bold;
-      color: #555;
+    .highlight {
+      margin: 1em 0;
     }
-    .news-content {
-      margin-top: 0.5em;
+    .highlight img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .news-list, .pub-list {
+      padding-left: 1em;
+      list-style-type: square;
     }
   </style>
 </head>
 <body>
-  <h1>News</h1>
-
-  <div class="news-item">
-    <div class="news-date">28 May 2025</div>
-    <div class="news-content">Our webpage has been created!</div>
-  </div>
-
+<header class="header-flex">
+<div class="logo-left">
+<img alt="Hybrid Materials Logo" src="logo-hybrid.png" style="height: 100px;"/>
+</div>
+<div class="center-text">
+<h1>Hybrid Materials Group</h1>
+<p>Prof. Artur Ciesielski team from the Centre for Advanced Technologies at AMU</p>
+</div>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="artur.html">Artur Ciesielski</a>
+<a href="team.html">Group members</a>
+<a href="research.html">Research</a>
+<a href="projects.html">Projects</a>
+<a href="publications.html">Publications</a>
+<a href="news.html">News</a>
+<a href="collaborations.html">Collaborations</a>
+<a href="contact.html">Contact</a>
+</nav>
+<main class="container">
+<section class="main-content" style="text-align: justify; padding-left: 1em;">
+<h2>News</h2>
+<div class="news-item" style="margin-bottom: 2em;">
+<div class="news-date" style="font-weight: bold; color: #555;">28 May 2025</div>
+<p class="news-content">Our webpage has been created!</p>
+</div>
+</section>
+</main>
+<footer>
+<p>© 2025 Hybrid Materials Group – WCZT</p>
+</footer>
 </body>
 </html>

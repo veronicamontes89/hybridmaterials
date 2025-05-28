@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home – Hybrid Materials Group</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
+<meta charset="utf-8"/>
+<title>Home – Hybrid Materials Group</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
     .container {
       display: flex;
       flex-direction: row;
@@ -33,73 +34,86 @@
   </style>
 </head>
 <body>
-  <header class="header-flex">
-    <div class="logo-left">
-      <img src="logo-hybrid.png" alt="Hybrid Materials Logo" style="height: 100px;">
-    </div>
-    <div class="center-text">
-      <h1>Hybrid Materials Group</h1>
-      <p>Prof. Artur Ciesielski team from the Centre for Advanced Technologies at AMU</p>
-    </div>
-  </header>
-  
+<header class="header-flex">
+<div class="logo-left">
+<img alt="Hybrid Materials Logo" src="logo-hybrid.png" style="height: 100px;"/>
+</div>
+<div class="center-text">
+<h1>Hybrid Materials Group</h1>
+<p>Prof. Artur Ciesielski team from the Centre for Advanced Technologies at AMU</p>
+</div>
+</header>
 <nav>
-  <a href="index.html">Home</a>
-  <a href="artur.html">Artur Ciesielski</a>
-  <a href="team.html">Group members</a>
-  <a href="research.html">Research</a>
-  <a href="projects.html">Projects</a>
-  <a href="publications.html">Publications</a>
-  <a href="news.html">News</a>
-  <a href="collaborations.html">Collaborations</a>
-  <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="artur.html">Artur Ciesielski</a>
+<a href="team.html">Group members</a>
+<a href="research.html">Research</a>
+<a href="projects.html">Projects</a>
+<a href="publications.html">Publications</a>
+<a href="news.html">News</a>
+<a href="collaborations.html">Collaborations</a>
+<a href="contact.html">Contact</a>
 </nav>
-
-  <main class="container">
-
-    <aside class="sidebar">
-      <h3>News</h3>
-      <ul class="news-list">
-        <li><strong>2025-05-12:</strong> Group received NCN grant for Hybrid-2025 project.</li>
-        <li><strong>2025-03-22:</strong> Dr. Smith presented at MRS Spring Meeting.</li>
-        <li><strong>2025-01-10:</strong> New publication in Advanced Materials.</li>
-      </ul>
-
-      <h3 style="margin-top:2em;">Recent Publications</h3>
-      <ul class="pub-list">
-        <li>M. Nowak et al., <em>Adv. Mater.</em>, 2025</li>
-        <li>V. Montes-García et al., <em>JACS</em>, 2024</li>
-        <li>A. Ciesielski et al., <em>Nat. Chem.</em>, 2023</li>
-      </ul>
-    </aside>
-
-    <section class="main-content">
-      
+<main class="container">
+<aside class="sidebar">
+<h3>News</h3>
+<ul class="news-list">
+<li><strong>2025-05-12:</strong> Group received NCN grant for Hybrid-2025 project.</li>
+<li><strong>2025-03-22:</strong> Dr. Smith presented at MRS Spring Meeting.</li>
+<li><strong>2025-01-10:</strong> New publication in Advanced Materials.</li>
+</ul>
+<h3 style="margin-top:2em;">Recent Publications</h3>
+<ul class="pub-list">
+<li>M. Nowak et al., <em>Adv. Mater.</em>, 2025</li>
+<li>V. Montes-García et al., <em>JACS</em>, 2024</li>
+<li>A. Ciesielski et al., <em>Nat. Chem.</em>, 2023</li>
+</ul>
+</aside>
+<section class="main-content">
 <h2>Welcome to the Hybrid Materials Group</h2>
 <p>We are an international research team established in <strong>2016</strong> at the <strong>Centre for Advanced Technologies at Adam Mickiewicz University (AMU)</strong>. Our work focuses on the <strong>design, synthesis, and functional integration of hybrid and low-dimensional materials</strong> for applications in energy storage, environmental remediation, and advanced sensing.</p>
-
 <p>We invite you to <strong>explore our projects and meet our team</strong>, and we are always open to <strong>collaborations across disciplines</strong>. If you are enthusiastic about cutting-edge materials science, we are <strong>actively looking for motivated researchers and students</strong> to join us.</p>
-
 <blockquote>Let's build the next generation of functional materials — together.</blockquote>
-
-
-
 <div style="margin-top: 3em; display: flex; justify-content: center; align-items: center; gap: 3em; text-align: center;">
-  <img src="logo-x.png" alt="X Logo" style="height:50px;">
-  <img src="logo-linkedin.png" alt="LinkedIn Logo" style="height:50px;">
-  <a href="http://www.wczt.pl/" target="_blank"><img src="logo-wczt.png" alt="WCZT" style="height:70px;"></a>
-  <a href="https://amu.edu.pl/" target="_blank"><img src="logo-uam.png" alt="UAM" style="height:70px;"></a>
-  <a href="https://www.ncn.gov.pl/en" target="_blank"><img src="logo-ncn.png" alt="NCN" style="height:70px;"></a>
+<img alt="X Logo" src="logo-x.png" style="height:50px;"/>
+<img alt="LinkedIn Logo" src="logo-linkedin.png" style="height:50px;"/>
+<a href="http://www.wczt.pl/" target="_blank"><img alt="WCZT" src="logo-wczt.png" style="height:70px;"/></a>
+<a href="https://amu.edu.pl/" target="_blank"><img alt="UAM" src="logo-uam.png" style="height:70px;"/></a>
+<a href="https://www.ncn.gov.pl/en" target="_blank"><img alt="NCN" src="logo-ncn.png" style="height:70px;"/></a>
 </div>
+</section>
+</main>
+<footer>
+<p>© 2025 Hybrid Materials Group – WCZT</p>
+</footer>
+<script>
+fetch('publications.html')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, 'text/html');
+    const publications = doc.querySelectorAll('p');
+    const pubList = document.querySelector('.pub-list');
+    if (!pubList) return;
 
+    pubList.innerHTML = ''; // Limpiar lo anterior
 
-
-
-
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Hybrid Materials Group – WCZT</p>
-  </footer>
-</body>
+    let count = 0;
+    for (let i = 0; i < publications.length && count < 3; i++) {
+      const text = publications[i].textContent;
+      const link = publications[i].querySelector('a');
+      const li = document.createElement('li');
+      li.textContent = text.replace('[Read publication]', '').trim();
+      if (link) {
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = ' [Read publication]';
+        a.target = '_blank';
+        li.appendChild(a);
+      }
+      pubList.appendChild(li);
+      count++;
+    }
+  });
+</script></body>
 </html>

@@ -34,6 +34,59 @@
       color: #004080;
     }
   </style>
+
+<style>
+.slider {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.slides {
+  width: 700%;
+  height: 100%;
+  display: flex;
+}
+.slides input {
+  display: none;
+}
+.slide {
+  width: 100%;
+  transition: 0.6s;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.navigation-manual, .navigation-auto {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+}
+.manual-btn, .auto-btn1, .auto-btn2, .auto-btn3, .auto-btn4, .auto-btn5, .auto-btn6, .auto-btn7 {
+  border: 1px solid #ccc;
+  padding: 4px;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.manual-btn:hover {
+  background: #ccc;
+}
+#radio1:checked ~ .first {margin-left: 0;}
+#radio2:checked ~ .first {margin-left: -100%;}
+#radio3:checked ~ .first {margin-left: -200%;}
+#radio4:checked ~ .first {margin-left: -300%;}
+#radio5:checked ~ .first {margin-left: -400%;}
+#radio6:checked ~ .first {margin-left: -500%;}
+#radio7:checked ~ .first {margin-left: -600%;}
+</style>
+
 </head>
 <body>
   <header class="header-flex">
@@ -70,7 +123,56 @@
         </ul>
         <p>Our work spans from scalable synthesis and exfoliation strategies to in-depth studies of structure–function relationships, aiming to unlock the full potential of these nanostructured systems in real-world applications.</p>
       </div>
-      <div class="research-image">[Image for Low-dimensional materials]</div>
+      <div class="research-image">
+<div class="slider">
+  <div class="slides">
+    <input type="radio" name="radio-btn" id="radio1" checked>
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+    <input type="radio" name="radio-btn" id="radio4">
+    <input type="radio" name="radio-btn" id="radio5">
+    <input type="radio" name="radio-btn" id="radio6">
+    <input type="radio" name="radio-btn" id="radio7">
+
+    <div class="slide first"><img src="images/ldm1.jpg" alt=""></div>
+    <div class="slide"><img src="images/ldm2.jpg" alt=""></div>
+    <div class="slide"><img src="images/ldm3.jpg" alt=""></div>
+    <div class="slide"><img src="images/ldm4.jpg" alt=""></div>
+    <div class="slide"><img src="images/ldm5.jpg" alt=""></div>
+    <div class="slide"><img src="images/ldm6.jpg" alt=""></div>
+    <div class="slide"><img src="images/ldm7.jpg" alt=""></div>
+
+    <div class="navigation-auto">
+      <div class="auto-btn1"></div>
+      <div class="auto-btn2"></div>
+      <div class="auto-btn3"></div>
+      <div class="auto-btn4"></div>
+      <div class="auto-btn5"></div>
+      <div class="auto-btn6"></div>
+      <div class="auto-btn7"></div>
+    </div>
+  </div>
+
+  <div class="navigation-manual">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+    <label for="radio3" class="manual-btn"></label>
+    <label for="radio4" class="manual-btn"></label>
+    <label for="radio5" class="manual-btn"></label>
+    <label for="radio6" class="manual-btn"></label>
+    <label for="radio7" class="manual-btn"></label>
+  </div>
+</div>
+
+<script>
+  let counter = 1;
+  setInterval(function() {
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter > 7) counter = 1;
+  }, 4000);
+</script>
+</div>
     </div>
 
     <div class="research-block">

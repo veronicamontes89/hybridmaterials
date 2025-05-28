@@ -3,55 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <title>Collaborations – Hybrid Materials Group</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2em;
+    main {
       max-width: 1000px;
       margin: auto;
+      padding: 2em;
     }
-    h1 {
-      text-align: center;
+    h2 {
       color: #004080;
+      margin-top: 1em;
     }
-    .collaboration-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5em;
-      margin-top: 2em;
-    }
-    .card {
+    .collaboration-card {
       border: 1px solid #ccc;
-      padding: 1em;
       border-radius: 10px;
-      background: #f9f9f9;
+      padding: 1em;
+      margin-bottom: 1em;
+      background-color: #f9f9f9;
     }
-    .card h3 {
+    .collaboration-card h3 {
       margin-top: 0;
       color: #004080;
     }
-    .card a {
-      text-decoration: none;
+    .collaboration-card a {
       color: #004080;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>Collaborations</h1>
-  <div class="collaboration-grid">
-    <div class="card">
+  <header class="header-flex">
+    <div class="logo-left">
+      <img src="logo-hybrid.png" alt="Hybrid Materials Logo" style="height: 100px;">
+    </div>
+    <div class="center-text">
+      <h1>Hybrid Materials Group</h1>
+      <p>Prof. Artur Ciesielski team from the Centre for Advanced Technologies at AMU</p>
+    </div>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="artur.html">Artur Ciesielski</a>
+    <a href="team.html">Group members</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="news.html">News</a>
+    <a href="collaborations.html">Collaborations</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2>Collaborations</h2>
+
+    <div class="collaboration-card">
       <h3>Oleksiy Gogotsi</h3>
       <p><a href="https://www.nanocarbon.tech/" target="_blank">NanoCarbonTech</a></p>
     </div>
-    <div class="card">
+    <div class="collaboration-card">
       <h3>Violetta Patroniak</h3>
       <p><a href="https://patroniakgroup.web.amu.edu.pl/" target="_blank">Faculty of Chemistry, AMU</a></p>
     </div>
-    <div class="card">
+    <div class="collaboration-card">
       <h3>Paolo Samorì</h3>
       <p><a href="http://www.nanochemistry.fr/" target="_blank">Nanochemistry Lab, Université de Strasbourg & CNRS</a></p>
     </div>
-  </div>
+
+  </main>
+  <footer>
+    <p>© 2025 Hybrid Materials Group – WCZT</p>
+  </footer>
 </body>
 </html>

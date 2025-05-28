@@ -4,90 +4,81 @@
   <meta charset="UTF-8" />
   <title>Research – Hybrid Materials Group</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .research-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2em;
-    }
-    .research-block {
-      margin-bottom: 3em;
-      display: flex;
-      flex-direction: row;
-      gap: 2em;
-    }
-    .research-text {
-      flex: 1;
-    }
-    .research-image {
-      width: 300px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9em;
-      color: #777;
-    }
-    h2, h3 {
-      color: #004080;
-    }
-  </style>
-
+  
 <style>
 .slider {
-  width: 300px;
-  height: 200px;
-  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   overflow: hidden;
-  border-radius: 8px;
+  margin: 1em 0;
+  border-radius: 10px;
 }
 .slides {
-  width: 700%;
-  height: auto;
   display: flex;
-}
-.slides input {
-  display: none;
+  animation: slide 28s infinite;
 }
 .slide {
-  width: 100%; object-fit: contain;
-  transition: 0.6s;
+  min-width: 100%;
+  transition: ease 1s;
 }
 .slide img {
   width: 100%;
-  height: 100%;
-  max-height: 200px;
+  height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
 }
-.navigation-manual, .navigation-auto {
-  position: absolute;
-  width: 100%; object-fit: contain;
-  display: flex;
-  justify-content: center;
-  margin-top: -30px;
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  14% { transform: translateX(0); }
+  28% { transform: translateX(-100%); }
+  42% { transform: translateX(-200%); }
+  56% { transform: translateX(-300%); }
+  70% { transform: translateX(-400%); }
+  84% { transform: translateX(-500%); }
+  100% { transform: translateX(-600%); }
 }
-.manual-btn, .auto-btn1, .auto-btn2, .auto-btn3, .auto-btn4, .auto-btn5, .auto-btn6, .auto-btn7 {
-  border: 1px solid #ccc;
-  padding: 4px;
-  border-radius: 50%;
-  margin: 0 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.manual-btn:hover {
-  background: #ccc;
-}
-#radio1:checked ~ .first {margin-left: 0;}
-#radio2:checked ~ .first {margin-left: -100%;}
-#radio3:checked ~ .first {margin-left: -200%;}
-#radio4:checked ~ .first {margin-left: -300%;}
-#radio5:checked ~ .first {margin-left: -400%;}
-#radio6:checked ~ .first {margin-left: -500%;}
-#radio7:checked ~ .first {margin-left: -600%;}
 </style>
+
+
+
+<style>
+.slider {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  overflow: hidden;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+.slides {
+  display: flex;
+  animation: slide 28s infinite;
+}
+.slide {
+  min-width: 100%;
+  transition: ease 1s;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  14% { transform: translateX(0); }
+  28% { transform: translateX(-100%); }
+  42% { transform: translateX(-200%); }
+  56% { transform: translateX(-300%); }
+  70% { transform: translateX(-400%); }
+  84% { transform: translateX(-500%); }
+  100% { transform: translateX(-600%); }
+}
+</style>
+
 
 </head>
 <body>
@@ -128,13 +119,13 @@
       <div class="research-image">
 <div class="slider">
   <div class="slides">
-    <input type="radio" name="radio-btn" id="radio1" checked>
-    <input type="radio" name="radio-btn" id="radio2">
-    <input type="radio" name="radio-btn" id="radio3">
-    <input type="radio" name="radio-btn" id="radio4">
-    <input type="radio" name="radio-btn" id="radio5">
-    <input type="radio" name="radio-btn" id="radio6">
-    <input type="radio" name="radio-btn" id="radio7">
+    
+    
+    
+    
+    
+    
+    
 
     <div class="slide first"><img src="images/ldm1.jpg" alt=""></div>
     <div class="slide"><img src="images/ldm2.jpg" alt=""></div>
@@ -155,15 +146,7 @@
     </div>
   </div>
 
-  <div class="navigation-manual">
-    <label for="radio1" class="manual-btn"></label>
-    <label for="radio2" class="manual-btn"></label>
-    <label for="radio3" class="manual-btn"></label>
-    <label for="radio4" class="manual-btn"></label>
-    <label for="radio5" class="manual-btn"></label>
-    <label for="radio6" class="manual-btn"></label>
-    <label for="radio7" class="manual-btn"></label>
-  </div>
+  
 </div>
 
 <script>

@@ -63,11 +63,7 @@
 <li><strong>2025-01-10:</strong> New publication in Advanced Materials.</li>
 </ul>
 <h3 style="margin-top:2em;">Recent Publications</h3>
-<ul class="pub-list">
-<li>M. Nowak et al., <em>Adv. Mater.</em>, 2025</li>
-<li>V. Montes-García et al., <em>JACS</em>, 2024</li>
-<li>A. Ciesielski et al., <em>Nat. Chem.</em>, 2023</li>
-</ul>
+<ul class="pub-list"></ul>
 </aside>
 <section class="main-content">
 <h2>Welcome to the Hybrid Materials Group</h2>
@@ -106,6 +102,38 @@ fetch('news.html')
       const li = document.createElement('li');
       li.innerHTML = `<strong>${date}:</strong> ${content}`;
       newsList.appendChild(li);
+      count++;
+    }
+  });
+</script><script>
+fetch('publications.html')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, 'text/html');
+    const publications = doc.querySelectorAll('p');
+    const pubList = document.querySelector('.pub-list');
+    if (!pubList) return;
+
+    pubList.innerHTML = '';
+
+    let count = 0;
+    for (let i = 0; i < publications.length && count < 3; i++) {
+      const p = publications[i];
+      const text = p.textContent.trim();
+      if (!/^\d+\./.test(text)) continue;
+
+      const link = p.querySelector('a');
+      const li = document.createElement('li');
+      li.textContent = text.replace('[Read publication]', '').trim();
+      if (link) {
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = ' [Read publication]';
+        a.target = '_blank';
+        li.appendChild(a);
+      }
+      pubList.appendChild(li);
       count++;
     }
   });

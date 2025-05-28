@@ -15,11 +15,7 @@ body {
     flex-wrap: nowrap;
 }
 .logo-left img {
-    height: 120px;
-}
-.logo-right img {
-    height: 120px;
-    margin-left: 10px;
+    height: 100px;
 }
 .center-text {
     text-align: center;
@@ -35,40 +31,9 @@ nav a {
     text-decoration: none;
     color: #004080;
 }
-main {
-    padding: 2em;
-}
-section {
-    margin-bottom: 2em;
-}
 footer {
     text-align: center;
     padding: 1em;
     background: #004080;
     color: white;
-}
-.member {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  margin-bottom: 2em;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1em;
-}
-.member img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-}
-.member h3 {
-  margin-top: 0;
-}
-.member a {
-  color: #004080;
-  text-decoration: none;
-}
-
-
-.small-logo {
-    height: 70px;
 }

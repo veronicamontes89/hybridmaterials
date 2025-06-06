@@ -139,5 +139,27 @@ fetch('publications.html')
       count++;
     }
   });
-</script></body>
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("publications.html")
+    .then(response => response.text())
+    .then(data => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "text/html");
+      const pubItems = doc.querySelectorAll("ul li, ol li");
+      const pubList = document.querySelector(".pub-list");
+      if (pubItems.length > 0 && pubList) {
+        for (let i = 0; i < Math.min(3, pubItems.length); i++) {
+          const li = document.createElement("li");
+          li.innerHTML = pubItems[i].innerHTML;
+          pubList.appendChild(li);
+        }
+      }
+    })
+    .catch(error => console.error("Error loading publications:", error));
+});
+</script>
+
+</body>
 </html>

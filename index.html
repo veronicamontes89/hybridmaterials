@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const paragraphs = doc.querySelectorAll("p");
       const pubList = document.querySelector(".pub-list");
       if (paragraphs.length > 0 && pubList) {
-        for (let i = 0; i < Math.min(3, paragraphs.length); i++) {
+        for (let i = 1; i < Math.min(4, paragraphs.length); i++) {
           const li = document.createElement("li");
           li.innerHTML = paragraphs[i].innerHTML;
           pubList.appendChild(li);

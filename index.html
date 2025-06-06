@@ -87,6 +87,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  // PUBLICATIONS
   fetch("publications.html")
     .then(response => response.text())
     .then(data => {
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const paragraphs = doc.querySelectorAll("p");
       const pubList = document.querySelector(".pub-list");
       if (paragraphs.length > 0 && pubList) {
-        for (let i = 1; i < Math.min(4, paragraphs.length); i++) {
+        for (let i = 0; i < Math.min(3, paragraphs.length); i++) {
           const li = document.createElement("li");
           li.innerHTML = paragraphs[i].innerHTML;
           pubList.appendChild(li);
@@ -103,6 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .catch(error => console.error("Error loading publications:", error));
+
+  // NEWS
+  fetch("news.html")
+    .then(response => response.text())
+    .then(data => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "text/html");
+      const newsItems = doc.querySelectorAll(".news-item");
+      const newsContainer = document.querySelector(".news-list");
+      if (newsItems.length > 0 && newsContainer) {
+        for (let i = 0; i < Math.min(3, newsItems.length); i++) {
+          const li = document.createElement("li");
+          li.innerHTML = newsItems[i].innerHTML;
+          newsContainer.appendChild(li);
+        }
+      }
+    })
+    .catch(error => console.error("Error loading news:", error));
 });
 </script>
 

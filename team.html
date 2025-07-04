@@ -38,6 +38,34 @@
       text-decoration: none;
       font-size: 0.85em;
     }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: black;
+    }
   </style>
 </head>
 <body>
@@ -63,22 +91,34 @@
     <a href="contact.html">Contact</a>
   </nav>
   <main>
-<h2 style="text-align:center; padding-top: 1em;">Group Members</h2>
+    <h2 style="text-align:center; padding-top: 1em;">Group Members</h2>
 
-<h3 style="width: 100%; border-bottom: 1px solid #ccc;">Director</h3>
-<div class="member-grid">
-<div class="member-card">
+    <h3 style="width: 100%; border-bottom: 1px solid #ccc;">Director</h3>
+    <div class="member-grid">
+      <div class="member-card">
         <img src="Artur.jpg" alt="Artur Ciesielski">
         <h4>Prof. wiz. Artur Ciesielski</h4>
         <p>Director</p>
         <p><strong>Email:</strong> artur.ciesielski@amu.edu.pl</p>
-        <p><strong>Phone:</strong>+48618291856 </p>   
+        <p><strong>Phone:</strong>+48618291856 </p>
         <p><strong>Office:</strong> B140</p>
         <a href="https://scholar.google.com/citations?user=vsOtNF0AAAAJ" target="_blank">Google Scholar</a><br>
-        <a href="https://orcid.org/0000-0003-3542-4092" target="_blank">ORCID</a>
-      </div>
-</div>
+        <a href="https://orcid.org/0000-0003-3542-4092" target="_blank">ORCID</a><br><br>
+        <button onclick="openModal('modal-artur')">Publications</button>
 
+        <div id="modal-artur" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-artur')">&times;</span>
+            <h3>Publications – Prof. Artur Ciesielski</h3>
+            <p>You can find a complete and up-to-date list of publications via the following links:</p>
+            <ul>
+              <li><a href="https://scholar.google.com/citations?user=vsOtNF0AAAAJ" target="_blank">Google Scholar</a></li>
+              <li><a href="https://orcid.org/0000-0003-3542-4092" target="_blank">ORCID</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 <h3 style="width: 100%; border-bottom: 1px solid #ccc;">Permanent Staff</h3>
 <div class="member-grid">
 <div class="member-card">
@@ -183,8 +223,25 @@
       <p>Dr. Włodzimierz Czepa (2017-2025), Dr. Tomasz Chudziak (2020-2024), Dr. Iwona Janica (2017-2021), Dr. Andrzej Musiał (2020-2021)</p>
      
       </div>
-<footer>
+</main>
+  <footer>
     <p>&copy; 2025 Hybrid Materials Laboratory – Designed by Verónica Montes García</p>
   </footer>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>

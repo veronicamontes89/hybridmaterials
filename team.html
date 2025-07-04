@@ -90,8 +90,28 @@
         <p><strong>Office:</strong> B140</p>
         <a href="https://orcid.org/0000-0002-0136-6667" target="_blank">ORCID</a>
    <details><summary>Publications</summary>
-         <ol>
-      </ol>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // PUBLICATIONS
+  fetch("publications.html")
+    .then(response => response.text())
+    .then(data => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "text/html");
+      const paragraphs = doc.querySelectorAll("Pakulski");
+      const pubList = document.querySelector(".pub-list");
+      if (paragraphs.length > 0 && pubList) {
+        for (let i = 1; i < Math.min(4, paragraphs.length); i++) {
+          const li = document.createElement("li");
+          li.innerHTML = paragraphs[i].innerHTML;
+          pubList.appendChild(li);
+        }
+      }
+    })
+    .catch(error => console.error("Error loading publications:", error));
+                          </script>
+
+     
    </details>
       </div>
 <div class="member-card">

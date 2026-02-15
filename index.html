@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"/>
 <title>Home – Hybrid Materials Laboratory</title>
-<link rel="stylesheet" href="style.css">
+<link href="style.css" rel="stylesheet"/>
+
 </head>
-
 <body>
-
-<header class="header-brand">
+<header class="header-flex header-brand">
   <img class="header-brand-img"
        src="header-logo.png"
-       alt="Hybrid Materials Laboratory">
+       alt="Hybrid Materials Laboratory" />
 </header>
 
+
+    
 <nav>
 <a href="index.html">Home</a>
 <a href="artur.html">Artur Ciesielski</a>
@@ -26,72 +28,42 @@
 <a href="collaborations.html">Collaborations</a>
 <a href="contact.html">Contact</a>
 </nav>
-
 <main class="container">
-
 <aside class="sidebar">
 <h3>News</h3>
-<ul class="news-list"></ul>
-
+<ul class="news-list">
+</ul>
 <h3 style="margin-top:2em;">Recent Publications</h3>
-<ul class="pub-list"></ul>
+<ul class="pub-list">
+
+</ul>
 </aside>
-
 <section class="main-content">
-
 <h2>Welcome to the Hybrid Materials Laboratory</h2>
+<p>We are an international research team established in <strong>2016</strong> at the <strong>Centre for Advanced Technologies of Adam Mickiewicz University (AMU)</strong>. Our work focuses on the <strong>design, synthesis, and functional integration of hybrid and low-dimensional materials</strong> for applications in energy storage, environmental remediation, and advanced sensing.</p>
+<p>We invite you to <strong>explore our projects and meet our team</strong>, and we are always open to <strong>collaborations across disciplines</strong>. If you are enthusiastic about cutting-edge materials science, we are <strong>actively looking for motivated researchers and students</strong> to join us.</p>
+<blockquote>Let's build the next generation of functional materials — together.</blockquote>
 
-<p>
-We are an international research team established in <strong>2016</strong> at the
-<strong>Centre for Advanced Technologies of Adam Mickiewicz University (AMU)</strong>.
-Our work focuses on the <strong>design, synthesis, and functional integration
-of hybrid and low-dimensional materials</strong> for applications in energy storage,
-environmental remediation, and advanced sensing.
-</p>
-
-<p>
-We invite you to <strong>explore our projects and meet our team</strong>,
-and we are always open to <strong>collaborations across disciplines</strong>.
-If you are enthusiastic about cutting-edge materials science,
-we are <strong>actively looking for motivated researchers and students</strong> to join us.
-</p>
-
-<blockquote>
-Let's build the next generation of functional materials — together.
-</blockquote>
-
-<div style="margin-top:3em; text-align:center;">
-<img src="group.jpg" alt="Research Group" style="height:500px;">
+<div style="margin-top: 3em; display: flex; justify-content: center; align-items: center; gap: 3em; text-align: center;">    
+ <img alt="X group" src="group.jpg" style="height:500px;"/>   
 </div>
-
-<div style="margin-top:3em; text-align:center;">
-<a href="https://x.com/HybridMatLab" target="_blank">
-  <img src="logo-x.png" alt="X Logo" style="height:50px;">
-</a>
-<a href="https://www.linkedin.com/company/hybrid-materials-lab/?viewAsMember=true" target="_blank">
-  <img src="logo-linkedin.png" alt="LinkedIn Logo" style="height:50px;">
-</a>
-<a href="https://czt.amu.edu.pl/" target="_blank">
-  <img src="logo-wczt.png" alt="WCZT" style="height:70px;">
-</a>
-<a href="https://amu.edu.pl/" target="_blank">
-  <img src="logo-uam.png" alt="UAM" style="height:70px;">
-</a>
-<a href="https://www.ncn.gov.pl/en" target="_blank">
-  <img src="logo-ncn.png" alt="NCN" style="height:70px;">
-</a>
+    
+<div style="margin-top: 3em; display: flex; justify-content: center; align-items: center; gap: 3em; text-align: center;">
+<a href="https://x.com/HybridMatLab" target="_blank"><img alt="X Logo" src="logo-x.png" style="height:50px;"/></a>
+<a href="https://www.linkedin.com/company/hybrid-materials-lab/?viewAsMember=true" target="_blank"><img alt="LinkedIn Logo" src="logo-linkedin.png" style="height:50px;"/></a>
+<a href="https://czt.amu.edu.pl/" target="_blank"><img alt="WCZT" src="logo-wczt.png" style="height:70px;"/></a>
+<a href="https://amu.edu.pl/" target="_blank"><img alt="UAM" src="logo-uam.png" style="height:70px;"/></a>
+<a href="https://www.ncn.gov.pl/en" target="_blank"><img alt="NCN" src="logo-ncn.png" style="height:70px;"/></a>
 </div>
-
 </section>
 </main>
-
 <footer>
 <p>© 2025 Hybrid Materials Laboratory – Designed by Verónica Montes García</p>
 </footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
+  // PUBLICATIONS
   fetch("publications.html")
     .then(response => response.text())
     .then(data => {
@@ -99,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const doc = parser.parseFromString(data, "text/html");
       const paragraphs = doc.querySelectorAll("p");
       const pubList = document.querySelector(".pub-list");
-
       if (paragraphs.length > 0 && pubList) {
         for (let i = 1; i < Math.min(4, paragraphs.length); i++) {
           const li = document.createElement("li");
@@ -107,8 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
           pubList.appendChild(li);
         }
       }
-    });
+    })
+    .catch(error => console.error("Error loading publications:", error));
 
+  // NEWS
   fetch("news.html")
     .then(response => response.text())
     .then(data => {
@@ -116,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const doc = parser.parseFromString(data, "text/html");
       const newsItems = doc.querySelectorAll(".news-item");
       const newsContainer = document.querySelector(".news-list");
-
       if (newsItems.length > 0 && newsContainer) {
         for (let i = 0; i < Math.min(3, newsItems.length); i++) {
           const li = document.createElement("li");
@@ -124,10 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
           newsContainer.appendChild(li);
         }
       }
-    });
-
+    })
+    .catch(error => console.error("Error loading news:", error));
 });
 </script>
+<!-- Contador de visitas -->
+<div style="text-align:center; margin-top:20px;">
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=21429719&style=0024&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>   
+</div>
+<!-- Fin del contador -->
 
 </body>
 </html>

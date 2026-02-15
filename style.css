@@ -168,5 +168,52 @@ footer {
   .partner-logos img {
     height: 50px;
   }
+
+
+   /* ====================================
+   PROFILE PAGE (Artur)
+==================================== */
+
+.profile-container {
+  display: flex;
+  gap: 3em;
+  align-items: flex-start;
+}
+
+.profile-photo {
+  width: 28%;
+}
+
+.profile-photo img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.profile-text {
+  width: 65%;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.profile-text h2 {
+  margin-top: 0;
+}
+
+.section-title {
+  margin-top: 2em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile-photo,
+  .profile-text {
+    width: 100%;
+  }
+}
+
 }
 

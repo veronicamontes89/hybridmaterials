@@ -69,7 +69,7 @@ nav a:hover {
   display: flex;
   gap: 2em;
 
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.75);
   padding: 30px;
   border-radius: 8px;
 

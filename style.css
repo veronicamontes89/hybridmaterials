@@ -47,11 +47,14 @@ nav a:hover {
 
 /* Main layout */
 .container {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+
   background: rgba(255,255,255,0.92);
   padding: 20px;
   border-radius: 8px;
 }
-
 .sidebar {
   width: 25%;
   background: #f7f7f7;

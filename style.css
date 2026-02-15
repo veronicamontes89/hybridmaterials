@@ -6,17 +6,18 @@ html, body {
   height: 100%;
 }
 
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 
-  background-color: #ffffff;
-  background-image: url("background-molecule.png");  /* image in same folder */
+  background-image: url("background-molecule.png");
   background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 95%;
+  background-position: center center;
+  background-size: cover;      /* THIS is key */
+  background-attachment: fixed; /* optional but nice */
 }
 
 

@@ -16,7 +16,7 @@ body {
   background-image: url("background-molecule.png");  /* image in same folder */
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: 75%;
+  background-size: 95%;
 }
 
 
@@ -33,7 +33,7 @@ body {
 }
 
 .header-brand-img {
-  height: 170px;
+  height: 190px;
   width: auto;
   display: block;
 }

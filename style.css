@@ -144,6 +144,29 @@ footer {
 }
 
 
+
+/* Center main content on projects page */
+.page-box {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 2em;
+}
+
+/* Center section titles */
+.page-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Make cards centered and slightly narrower */
+.collaboration-card {
+  max-width: 900px;
+  margin: 0 auto 25px auto;
+}
+
+
+
+
 /* ====================================
    RESPONSIVE
 ==================================== */

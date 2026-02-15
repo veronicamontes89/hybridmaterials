@@ -1,6 +1,6 @@
-/* =========================
+/* ====================================
    BASE + BACKGROUND
-========================= */
+==================================== */
 
 html, body {
   height: 100%;
@@ -13,23 +13,23 @@ body {
   line-height: 1.6;
 
   background-color: #ffffff;
-  background-image: url("images/background-molecule.png");
+  background-image: url("background-molecule.png");  /* image in same folder */
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 60%;
 }
 
 
-/* =========================
+/* ====================================
    HEADER
-========================= */
+==================================== */
 
 .header-brand {
   background: #182858;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 12px;
+  padding: 25px 12px;
 }
 
 .header-brand-img {
@@ -39,18 +39,18 @@ body {
 }
 
 
-/* =========================
+/* ====================================
    NAVIGATION
-========================= */
+==================================== */
 
 nav {
   background: #182858;
-  padding: 0.7em;
+  padding: 0.8em;
   text-align: center;
 }
 
 nav a {
-  margin: 0 1em;
+  margin: 0 1.2em;
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -61,26 +61,26 @@ nav a:hover {
 }
 
 
-/* =========================
-   LAYOUT
-========================= */
+/* ====================================
+   MAIN LAYOUT
+==================================== */
 
 .container {
   display: flex;
   gap: 2em;
 
-  background: rgba(255,255,255,0.90);
-  padding: 20px;
+  background: rgba(255,255,255,0.92);
+  padding: 30px;
   border-radius: 8px;
 
-  margin: 30px;
+  margin: 0;                 /* No white outer space */
 }
 
 .sidebar {
   width: 25%;
   background: #f7f7f7;
-  padding: 1em;
-  border-right: 1px solid #ccc;
+  padding: 1.5em;
+  border-right: 1px solid #ddd;
 }
 
 .main-content {
@@ -88,23 +88,65 @@ nav a:hover {
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ====================================
+   NEWS & PUBLICATIONS LISTS
+==================================== */
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background-color: #182858;
-  color: white;
+.news-list,
+.pub-list {
+  padding-left: 1.2em;
+  list-style-type: square;
+}
+
+.news-list li,
+.pub-list li {
+  margin-bottom: 1em;
 }
 
 
-/* =========================
+/* ====================================
+   PARTNER LOGOS
+==================================== */
+
+.partner-logos {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;          /* space between logos */
+  flex-wrap: wrap;
+}
+
+.partner-logos img {
+  height: 70px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.partner-logos img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ====================================
+   FOOTER
+==================================== */
+
+footer {
+  text-align: center;
+  padding: 1.2em;
+  background-color: #182858;
+  color: white;
+  margin-top: 40px;
+}
+
+
+/* ====================================
    RESPONSIVE
-========================= */
+==================================== */
 
 @media (max-width: 900px) {
+
   .container {
     flex-direction: column;
   }
@@ -117,6 +159,14 @@ footer {
 
   body {
     background-size: 100%;
+  }
+
+  .partner-logos {
+    gap: 30px;
+  }
+
+  .partner-logos img {
+    height: 50px;
   }
 }
 

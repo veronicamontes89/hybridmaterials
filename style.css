@@ -1,11 +1,6 @@
-/* ====================================
-   BASE + BACKGROUND
-==================================== */
-
-html, body {
-  height: 100%;
-}
-
+/* =========================
+   BASE
+========================= */
 
 body {
   font-family: Arial, sans-serif;
@@ -13,42 +8,40 @@ body {
   padding: 0;
   line-height: 1.6;
 
-  background-image: url("background-molecule.png");
+  /* Background image */
+  background-image: url("images/background.jpg");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;      /* THIS is key */
-  background-attachment: fixed; /* optional but nice */
+  background-position: right center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-
-
-
-/* ====================================
+/* =========================
    HEADER
-==================================== */
+========================= */
 
 .header-brand {
   background: #182858;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 12px;
+  padding: 20px 12px;
 }
 
 .header-brand-img {
+  max-width: 100%;
   height: 150px;
   width: auto;
   display: block;
 }
 
-
-/* ====================================
+/* =========================
    NAVIGATION
-==================================== */
+========================= */
 
 nav {
   background: #182858;
-  padding: 0.8em;
+  padding: 0.6em;
   text-align: center;
 }
 
@@ -63,77 +56,81 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* =========================
+   GENERIC PAGE CONTAINER
+   (used in projects, team, artur etc.)
+========================= */
 
-/* ====================================
-   MAIN LAYOUT
-==================================== */
+.page-box {
+  background: rgba(255, 255, 255, 0.65);   /* transparency level */
+  padding: 35px;
+  border-radius: 12px;
+
+  width: min(1300px, calc(100% - 60px));
+  margin: 40px auto;
+}
+
+/* Center page titles */
+.page-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   INDEX LAYOUT
+========================= */
 
 .container {
   display: flex;
+  flex-direction: row;
   gap: 2em;
 
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.65);
   padding: 30px;
-  border-radius: 8px;
+  border-radius: 12px;
 
-  margin: 0;                 /* No white outer space */
+  width: min(1300px, calc(100% - 60px));
+  margin: 40px auto;
 }
 
 .sidebar {
   width: 25%;
-  background: #f7f7f7;
+  background: rgba(255,255,255,0.85);
   padding: 1.5em;
-  border-right: 1px solid #ddd;
+  border-radius: 10px;
 }
 
 .main-content {
   width: 75%;
 }
 
+/* =========================
+   PROJECT CARDS
+========================= */
 
-/* ====================================
-   NEWS & PUBLICATIONS LISTS
-==================================== */
-
-.news-list,
-.pub-list {
-  padding-left: 1.2em;
-  list-style-type: square;
+.collaboration-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 0 auto 30px auto;
+  max-width: 1000px;
 }
 
-.news-list li,
-.pub-list li {
-  margin-bottom: 1em;
+/* =========================
+   TEAM CARDS
+========================= */
+
+.team-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
 }
 
-
-/* ====================================
-   PARTNER LOGOS
-==================================== */
-
-.partner-logos {
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;          /* space between logos */
-  flex-wrap: wrap;
-}
-
-.partner-logos img {
-  height: 70px;
-  width: auto;
-  transition: transform 0.2s ease;
-}
-
-.partner-logos img:hover {
-  transform: scale(1.05);
-}
-
-
-/* ====================================
+/* =========================
    FOOTER
-==================================== */
+========================= */
 
 footer {
   text-align: center;
@@ -143,32 +140,9 @@ footer {
   margin-top: 40px;
 }
 
-
-
-/* Center main content on projects page */
-.page-box{
-  background: rgba(255,255,255,0.65);
-  padding: 30px;
-  border-radius: 10px;
-
-  max-width: 1200px;     /* make it wider so it reaches more to the right */
-  margin: 40px auto;     /* centers it */
-}
-
-
-
-/* Make cards centered and slightly narrower */
-.collaboration-card {
-  max-width: 1000px;
-  margin: 0 auto 25px auto;
-}
-
-
-
-
-/* ====================================
+/* =========================
    RESPONSIVE
-==================================== */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -179,26 +153,10 @@ footer {
   .sidebar,
   .main-content {
     width: 100%;
-    border-right: none;
   }
 
-  body {
-    background-size: 100%;
+  .team-card {
+    width: 100%;
   }
-
-  .partner-logos {
-    gap: 30px;
-  }
-
-  .partner-logos img {
-    height: 50px;
-  }
-
-
 }
-.page-box{
-  background: rgba(255,255,255,0.65);
-  padding: 30px;
-  border-radius: 10px;
-  margin: 0;                 /* keep it flush left like you wanted */
-}
+

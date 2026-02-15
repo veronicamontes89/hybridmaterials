@@ -68,27 +68,35 @@ nav a:hover {
    MAIN LAYOUT
 ==================================== */
 
+/* ====================================
+   MAIN LAYOUT
+==================================== */
+
 .container {
   display: flex;
   gap: 2em;
+  align-items: flex-start;
 
   background: rgba(255,255,255,0.75);
   padding: 30px;
   border-radius: 8px;
-
-  margin: 0;                 /* No white outer space */
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .sidebar {
-  width: 25%;
+  flex: 0 0 25%;          /* fixed 25% only when sidebar exists */
   background: #f7f7f7;
   padding: 1.5em;
   border-right: 1px solid #ddd;
 }
 
 .main-content {
-  width: 75%;
+  flex: 1;                /* takes ALL remaining space */
+  min-width: 0;
 }
+
 
 
 /* ====================================

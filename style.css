@@ -1,24 +1,29 @@
 /* =========================
-   BASE
+   BASE + BACKGROUND
 ========================= */
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 
-  /* Background image */
+  background-color: #ffffff;
   background-image: url("images/background-molecule.png");
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: 70%;
-  background-color: #ffffff;
+  background-size: 60%;
 }
 
 
 /* =========================
    HEADER
 ========================= */
+
 .header-brand {
   background: #182858;
   display: flex;
@@ -28,7 +33,6 @@ body {
 }
 
 .header-brand-img {
-  max-width: 100%;
   height: 150px;
   width: auto;
   display: block;
@@ -38,9 +42,10 @@ body {
 /* =========================
    NAVIGATION
 ========================= */
+
 nav {
   background: #182858;
-  padding: 0.5em;
+  padding: 0.7em;
   text-align: center;
 }
 
@@ -57,19 +62,18 @@ nav a:hover {
 
 
 /* =========================
-   MAIN LAYOUT
+   LAYOUT
 ========================= */
+
 .container {
   display: flex;
-  flex-direction: row;
   gap: 2em;
 
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.90);
   padding: 20px;
   border-radius: 8px;
 
-  max-width: 1200px;
-  margin: 40px auto;
+  margin: 30px;
 }
 
 .sidebar {
@@ -85,27 +89,9 @@ nav a:hover {
 
 
 /* =========================
-   IMAGES & LISTS
-========================= */
-.highlight {
-  margin: 1em 0;
-}
-
-.highlight img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-.news-list,
-.pub-list {
-  padding-left: 1em;
-  list-style-type: square;
-}
-
-
-/* =========================
    FOOTER
 ========================= */
+
 footer {
   text-align: center;
   padding: 1em;
@@ -117,6 +103,7 @@ footer {
 /* =========================
    RESPONSIVE
 ========================= */
+
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -127,4 +114,9 @@ footer {
     width: 100%;
     border-right: none;
   }
+
+  body {
+    background-size: 100%;
+  }
 }
+

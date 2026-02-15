@@ -4,6 +4,12 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+
+  background-image: url("images/background-molecule.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  background-attachment: fixed;
 }
 
 /* Header (new centered logo on correct blue) */
@@ -93,17 +99,6 @@ footer {
   }
 
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
 
-  background-image: url("images/background-molecule.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
-  background-attachment: fixed;
-}
   
 }

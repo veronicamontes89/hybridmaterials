@@ -1,34 +1,43 @@
-/* Base */
+/* =========================
+   BASE
+========================= */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 
-  <img src="images/header-logo.png">;
+  /* Background image */
+  background-image: url("images/background-molecule.png");
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
-  background-attachment: fixed;
+  background-position: right top;
+  background-size: 70%;
+  background-color: #ffffff;
 }
 
-/* Header (new centered logo on correct blue) */
+
+/* =========================
+   HEADER
+========================= */
 .header-brand {
   background: #182858;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 12px;
+  padding: 20px 12px;
 }
 
 .header-brand-img {
   max-width: 100%;
-  height: 150px;   /* adjust if needed */
+  height: 150px;
   width: auto;
   display: block;
 }
 
-/* Navigation (make it same blue as header) */
+
+/* =========================
+   NAVIGATION
+========================= */
 nav {
   background: #182858;
   padding: 0.5em;
@@ -39,13 +48,17 @@ nav a {
   margin: 0 1em;
   text-decoration: none;
   color: white;
+  font-weight: 500;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Main layout */
+
+/* =========================
+   MAIN LAYOUT
+========================= */
 .container {
   display: flex;
   flex-direction: row;
@@ -54,7 +67,11 @@ nav a:hover {
   background: rgba(255,255,255,0.92);
   padding: 20px;
   border-radius: 8px;
+
+  max-width: 1200px;
+  margin: 40px auto;
 }
+
 .sidebar {
   width: 25%;
   background: #f7f7f7;
@@ -66,7 +83,10 @@ nav a:hover {
   width: 75%;
 }
 
-/* Home page lists/images */
+
+/* =========================
+   IMAGES & LISTS
+========================= */
 .highlight {
   margin: 1em 0;
 }
@@ -82,7 +102,10 @@ nav a:hover {
   list-style-type: square;
 }
 
-/* Footer (same blue) */
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 1em;
@@ -90,18 +113,18 @@ footer {
   color: white;
 }
 
-/* Optional: responsive stack on small screens */
+
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
   }
+
   .sidebar,
   .main-content {
     width: 100%;
     border-right: none;
   }
-
-
-
-  
 }

@@ -11,11 +11,7 @@ body {
   background-size: contain;
   background-attachment: fixed;
 }
-.container {
-  background: rgba(255,255,255,0.92);
-  padding: 20px;
-  border-radius: 8px;
-}
+
 /* Header (new centered logo on correct blue) */
 .header-brand {
   background: #182858;
@@ -51,9 +47,9 @@ nav a:hover {
 
 /* Main layout */
 .container {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
+  background: rgba(255,255,255,0.92);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .sidebar {

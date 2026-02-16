@@ -175,36 +175,57 @@ footer {
 
 
 
-/* ====================================
-   RESPONSIVE
-==================================== */
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 900px){
 
-@media (max-width: 900px) {
-
-  .container {
-    flex-direction: column;
+  /* Make nav wrap nicely instead of overflowing */
+  nav{
+    padding: 0.6em 0.4em;
+  }
+  nav a{
+    display: inline-block;
+    margin: 0.4em 0.7em;
+    white-space: nowrap;
   }
 
-  .sidebar,
-  .main-content {
+  /* Stack homepage layout (sidebar on top, content below) */
+  .container{
+    flex-direction: column;
+    gap: 1.2em;
+    padding: 18px;
+  }
+  .sidebar{
+    flex: none;
     width: 100%;
     border-right: none;
+    padding: 1em;
+  }
+  .main-content{
+    width: 100%;
   }
 
-  body {
-    background-size: 100%;
+  /* Full-width page padding (team/projects/publications pages) */
+  .page-box{
+    padding: 18px;
   }
 
-  .partner-logos {
-    gap: 30px;
+  /* If you use fixed-width cards anywhere, make them responsive */
+  .member-card,
+  .team-card,
+  .collaboration-card{
+    width: 100%;
+    max-width: 100%;
   }
 
-  .partner-logos img {
-    height: 50px;
+  /* Background less aggressive on mobile (optional) */
+  body{
+    background-attachment: scroll;
+    background-position: center;
   }
-
-
 }
+
 .page-box{
   background: rgba(255,255,255,0.65);
   padding: 30px;

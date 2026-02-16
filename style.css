@@ -1,221 +1,234 @@
-/* =========================
+/* ====================================
    BASE + BACKGROUND
-========================= */
+==================================== */
 
-* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+}
 
-html, body { height: 100%; }
 
-body{
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 
-  /* background image */
-  background-image: url("images/background.jpg");
+  background-image: url("background-molecule.png");
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;      /* THIS is key */
+  background-attachment: fixed; /* optional but nice */
 }
 
-/* =========================
-   HEADER
-========================= */
 
-.header-brand{
+
+
+/* ====================================
+   HEADER
+==================================== */
+
+.header-brand {
   background: #182858;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 12px;
+  padding: 25px 12px;
 }
 
-.header-brand-img{
+.header-brand-img {
   height: 150px;
   width: auto;
-  max-width: 100%;
   display: block;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
 
-nav{
+/* ====================================
+   NAVIGATION
+==================================== */
+
+nav {
   background: #182858;
-  padding: 0.6em 0.5em;
+  padding: 0.8em;
   text-align: center;
 }
 
-nav a{
-  margin: 0 1em;
+nav a {
+  margin: 0 1.2em;
   text-decoration: none;
   color: white;
   font-weight: 500;
 }
 
-nav a:hover{
+nav a:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   FULL-WIDTH TRANSPARENT PAGE AREA
-   Use on pages: team/projects/publications/etc.
-   <main class="page-box">
-========================= */
 
-.page-box{
-  background: rgba(255,255,255,0.65); /* change 0.65 -> 0.75 less transparent */
-  width: 100%;
-  margin: 0;
-  padding: 35px;
-}
+/* ====================================
+   MAIN LAYOUT
+==================================== */
 
-/* Titles inside page-box (optional) */
-.page-box h2{
-  margin-top: 0;
-}
+/* ====================================
+   MAIN LAYOUT
+==================================== */
 
-/* =========================
-   HOMEPAGE LAYOUT (Index)
-   Use: <main class="container"><aside class="sidebar">...<section class="main-content">...
-========================= */
-
-.container{
+.container {
   display: flex;
   gap: 2em;
   align-items: flex-start;
 
-  background: rgba(255,255,255,0.65);
-  width: 100%;
+  background: rgba(255,255,255,0.75);
+  padding: 30px;
+  border-radius: 8px;
   margin: 0;
-  padding: 35px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
-.sidebar{
-  flex: 0 0 320px;                 /* fixed sidebar size */
-  background: rgba(255,255,255,0.85);
-  padding: 1.2em;
+.sidebar {
+  flex: 0 0 25%;          /* fixed 25% only when sidebar exists */
+  background: #f7f7f7;
+  padding: 1.5em;
   border-right: 1px solid #ddd;
-  border-radius: 10px;
 }
 
-.main-content{
-  flex: 1;                          /* takes all remaining width */
+.main-content {
+  flex: 1;                /* takes ALL remaining space */
   min-width: 0;
 }
 
-/* lists/images */
-.news-list, .pub-list{
-  padding-left: 1em;
+
+
+/* ====================================
+   NEWS & PUBLICATIONS LISTS
+==================================== */
+
+.news-list,
+.pub-list {
+  padding-left: 1.2em;
   list-style-type: square;
 }
 
-.highlight img{
-  max-width: 100%;
-  border-radius: 10px;
+.news-list li,
+.pub-list li {
+  margin-bottom: 1em;
 }
 
-/* =========================
-   PROJECT CARDS (projects.html)
-========================= */
 
-.collaboration-card{
-  background: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 25px;
-  margin: 0 0 30px 0;               /* full width inside page-box */
-  border: 1px solid rgba(0,0,0,0.15);
+/* ====================================
+   PARTNER LOGOS
+==================================== */
+
+.partner-logos {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;          /* space between logos */
+  flex-wrap: wrap;
 }
 
-/* =========================
-   TEAM CARDS (team.html)
-   (Only applies if you use these class names)
-========================= */
-
-.member-card, .team-card{
-  background: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid rgba(0,0,0,0.15);
+.partner-logos img {
+  height: 70px;
+  width: auto;
+  transition: transform 0.2s ease;
 }
 
-/* =========================
+.partner-logos img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ====================================
    FOOTER
-========================= */
+==================================== */
 
-footer{
+footer {
   text-align: center;
   padding: 1.2em;
   background-color: #182858;
   color: white;
+  margin-top: 40px;
 }
+
+
+
+/* Center main content on projects page */
+
+
+.page-box{
+  background: rgba(255,255,255,0.65);
+  padding: 35px;
+  border-radius: 0;      /* optional: remove round corners if full width */
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Make cards centered and slightly narrower */
+.collaboration-card {
+  max-width: 1000px;
+  margin: 0 auto 25px auto;
+}
+
+
+
 
 /* =========================
    MOBILE FIX
 ========================= */
-
 @media (max-width: 900px){
 
-  /* iOS/phone fix: background fixed causes weird scroll behavior */
-  body{
-    background-attachment: scroll;
-    background-position: center;
-  }
-
-  /* Header: logo must scale */
-  .header-brand{
-    padding: 18px 10px;
-  }
-
-  .header-brand-img{
-    height: auto;
-    max-width: 92%;
-  }
-
-  /* Nav: wrap links instead of overflowing */
+  /* Make nav wrap nicely instead of overflowing */
   nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
+    padding: 0.6em 0.4em;
   }
-
   nav a{
-    margin: 4px 8px;
-    font-size: 14px;
+    display: inline-block;
+    margin: 0.4em 0.7em;
     white-space: nowrap;
   }
 
-  /* Page padding smaller on mobile */
-  .page-box{
-    padding: 18px;
-  }
-
-  /* Homepage stack: sidebar on top, content below */
+  /* Stack homepage layout (sidebar on top, content below) */
   .container{
     flex-direction: column;
     gap: 1.2em;
     padding: 18px;
   }
-
   .sidebar{
     flex: none;
     width: 100%;
     border-right: none;
+    padding: 1em;
   }
-
   .main-content{
     width: 100%;
   }
 
-  /* Cards full width on phone */
-  .member-card, .team-card, .collaboration-card{
+  /* Full-width page padding (team/projects/publications pages) */
+  .page-box{
+    padding: 18px;
+  }
+
+  /* If you use fixed-width cards anywhere, make them responsive */
+  .member-card,
+  .team-card,
+  .collaboration-card{
     width: 100%;
     max-width: 100%;
   }
+
+  /* Background less aggressive on mobile (optional) */
+  body{
+    background-attachment: scroll;
+    background-position: center;
+  }
+}
+
+.page-box{
+  background: rgba(255,255,255,0.65);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0;                 /* keep it flush left like you wanted */
 }

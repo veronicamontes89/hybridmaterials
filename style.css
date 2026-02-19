@@ -210,3 +210,82 @@ footer {
   padding: 30px;
   border-radius: 10px;
   margin: 0;                 /* keep it flush left like you wanted */
+
+
+   /* =========================
+   MOBILE (keep SAME 2-column style)
+========================= */
+@media (max-width: 900px){
+
+  /* Header logo scales */
+  .header-brand-img{
+    height: auto;
+    max-width: 92%;
+  }
+
+  /* Nav wraps nicely */
+  nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
+  nav a{
+    margin: 4px 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* IMPORTANT: keep 2 columns */
+  .container{
+    flex-direction: row;     /* <-- stays row */
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .sidebar{
+    flex: 0 0 38%;           /* sidebar width on phone */
+    width: auto;
+    padding: 12px;
+  }
+
+  .main-content{
+    flex: 1;
+    min-width: 0;            /* prevents weird overflow */
+  }
+
+  /* Reduce text size a bit so 2 columns fits */
+  body{
+    font-size: 14px;
+    background-attachment: scroll; /* iOS fix */
+    background-position: center;
+  }
+
+  /* Make ALL images responsive */
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Generic fix for “profile” layouts on other pages (Artur, Research, etc.) */
+  .profile-container{
+    flex-direction: row;     /* keep same style */
+    gap: 12px;
+    padding: 12px;
+  }
+  .profile-photo{
+    flex: 0 0 40%;
+    width: auto;
+  }
+  .profile-text{
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  /* Full-width pages still full width */
+  .page-box{
+    padding: 12px;
+  }
+}

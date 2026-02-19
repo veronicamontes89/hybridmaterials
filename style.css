@@ -286,3 +286,66 @@ img {
   }
 }
 
+
+/* ===============================
+   Mobile fixes: index + research
+   =============================== */
+
+img { max-width: 100%; height: auto; }
+
+/* --- INDEX footer / logos --- */
+@media (max-width: 768px) {
+
+  /* Social icons row: wrap nicely */
+  .social-icons, .social-links, .footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  /* Partner logos: switch from row to responsive grid */
+  .partner-logos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 24px;
+  }
+
+  .partner-logos img {
+    max-height: 55px;
+    width: auto;
+  }
+}
+
+/* --- RESEARCH "one letter per line" fix --- */
+@media (max-width: 768px) {
+
+  /* Whatever container holds each research topic row */
+  .research-item, .research-row, .topic-row {
+    display: flex;
+    flex-direction: column;   /* stack on mobile */
+    gap: 12px;
+  }
+
+  /* The text/title block MUST be allowed to be wide */
+  .research-text, .topic-text, .research-description {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  /* The small left column (numbers/labels) should NOT force tiny width */
+  .research-label, .topic-label, .left-col {
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  /* Prevent “character wrapping” for headings */
+  h1, h2, h3, .research-title, .topic-title {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}

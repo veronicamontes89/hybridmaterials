@@ -200,5 +200,89 @@ footer {
   margin: 0 auto 25px auto;
 }
 
+/* ====== Mobile / responsive fixes ====== */
 
+/* Prevent images from overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Avoid horizontal scroll from long links/words */
+.page-box, .container, .main-content, .sidebar, .profile-text {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  /* Header logo smaller */
+  .header-brand-img {
+    height: 80px;
+  }
+
+  /* Nav: wrap links instead of forcing one long line */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6em;
+    padding: 0.75em;
+    text-align: center;
+  }
+  nav a {
+    margin: 0;
+    padding: 0.35em 0.55em;
+    display: inline-block;
+  }
+
+  /* Homepage: stack sidebar + content */
+  .container {
+    flex-direction: column;
+    padding: 16px;
+    gap: 1.2em;
+  }
+  .sidebar {
+    flex: 1 1 auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Other pages: reduce padding */
+  .page-box {
+    padding: 18px;
+  }
+
+  /* Artur page: stack photo + text */
+  .profile-container {
+    flex-direction: column;
+    padding: 1em;
+  }
+  .profile-photo,
+  .profile-text {
+    width: 100%;
+  }
+
+  /* Partner logos: tighter on mobile */
+  .partner-logos {
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .partner-logos img {
+    height: 50px;
+  }
+
+  /* Team modal (if open on mobile): fit better */
+  .modal {
+    padding-top: 20px;
+  }
+  .modal-content {
+    width: 92%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  nav a {
+    font-size: 0.95em;
+  }
+}
 

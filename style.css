@@ -6,7 +6,6 @@ html, body {
   height: 100%;
 }
 
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -16,10 +15,9 @@ body {
   background-image: url("background-molecule.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;      /* THIS is key */
-  background-attachment: fixed; /* optional but nice */
+  background-size: cover;
+  background-attachment: scroll;   /* better for mobile */
 }
-
 
 
 
@@ -27,11 +25,13 @@ body {
    HEADER
 ==================================== */
 
-.header-brand { background:#182858; display:flex; justify-content:center; align-items:center; padding:18px 12px; }
-nav { background:#182858; }
-footer { background:#182858; color:#fff; }
-
-
+.header-brand {
+  background:#182858;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:22px 12px;
+}
 
 .header-brand-img {
   height: 120px;
@@ -39,14 +39,9 @@ footer { background:#182858; color:#fff; }
   display: block;
 }
 
-
-/* ====================================
-   NAVIGATION
-==================================== */
-
 nav {
   background: #182858;
-  padding: 0.8em;
+  padding: 0.9em;
   text-align: center;
 }
 
@@ -61,13 +56,17 @@ nav a:hover {
   text-decoration: underline;
 }
 
+footer {
+  background:#182858;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+}
+
+
 
 /* ====================================
-   MAIN LAYOUT
-==================================== */
-
-/* ====================================
-   MAIN LAYOUT
+   MAIN LAYOUT (Homepage 2-column)
 ==================================== */
 
 .container {
@@ -78,27 +77,40 @@ nav a:hover {
   background: rgba(255,255,255,0.75);
   padding: 30px;
   border-radius: 8px;
-  margin: 0;
-  box-sizing: border-box;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .sidebar {
-  flex: 0 0 25%;          /* fixed 25% only when sidebar exists */
+  flex: 0 0 25%;
   background: #f7f7f7;
   padding: 1.5em;
   border-right: 1px solid #ddd;
 }
 
 .main-content {
-  flex: 1;                /* takes ALL remaining space */
+  flex: 1;
   min-width: 0;
 }
 
 
 
 /* ====================================
-   NEWS & PUBLICATIONS LISTS
+   FULL WIDTH PAGE (Artur, Members, Projects etc.)
+==================================== */
+
+.page-box{
+  background: rgba(255,255,255,0.65);
+  padding: 35px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+/* ====================================
+   LISTS
 ==================================== */
 
 .news-list,
@@ -113,6 +125,7 @@ nav a:hover {
 }
 
 
+
 /* ====================================
    PARTNER LOGOS
 ==================================== */
@@ -122,7 +135,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;          /* space between logos */
+  gap: 60px;
   flex-wrap: wrap;
 }
 
@@ -138,22 +151,10 @@ nav a:hover {
 
 
 
+/* ====================================
+   CARDS
+==================================== */
 
-
-/* Center main content on projects page */
-
-
-.page-box{
-  background: rgba(255,255,255,0.65);
-  padding: 35px;
-  border-radius: 0;      /* optional: remove round corners if full width */
-  width: 100%;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-
-/* Make cards centered and slightly narrower */
 .collaboration-card {
   max-width: 1000px;
   margin: 0 auto 25px auto;
@@ -161,22 +162,57 @@ nav a:hover {
 
 
 
-
 /* ====================================
-   RESPONSIVE
+   RESPONSIVE (Phone)
 ==================================== */
 
 @media (max-width: 900px){
-  .header-brand-img{ max-width: 92%; height:auto; }
-}
 
+  .header-brand {
+    padding: 18px 10px;
+  }
 
+  .header-brand-img{
+    max-width: 260px;
+    height:auto;
+  }
 
-.page-box{
-  background: rgba(255,255,255,0.65);
-  padding: 30px;
-  border-radius: 10px;
-  margin: 0;                 /* keep it flush left like you wanted */
- }
-}
+  nav {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    padding:10px;
+  }
+
+  nav a{
+    margin:5px 8px;
+    font-size:15px;
+    white-space:nowrap;
+  }
+
+  /* Keep 2 columns for homepage */
+  .container{
+    flex-direction: row;
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .sidebar{
+    flex: 0 0 38%;
+    padding: 12px;
+  }
+
+  .main-content{
+    flex:1;
+  }
+
+  .page-box{
+    padding:20px;
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
 }

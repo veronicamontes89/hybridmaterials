@@ -166,53 +166,20 @@ footer {
    RESPONSIVE (Phone)
 ==================================== */
 
-@media (max-width: 900px){
-
-  .header-brand {
-    padding: 18px 10px;
-  }
-
-  .header-brand-img{
-    max-width: 260px;
-    height:auto;
-  }
-
-  nav {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    padding:10px;
-  }
-
-  nav a{
-    margin:5px 8px;
-    font-size:15px;
-    white-space:nowrap;
-  }
-
-  /* Keep 2 columns for homepage */
+@media (max-width: 700px){
   .container{
-    flex-direction: row;
-    gap: 15px;
-    padding: 18px;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
   }
 
-  .sidebar{
-    flex: 0 0 38%;
-    padding: 12px;
-  }
-
+  .sidebar,
   .main-content{
-    flex:1;
-  }
-
-  .page-box{
-    padding:20px;
-  }
-
-  img{
-    max-width:100%;
-    height:auto;
+    width: 100%;
+    flex: 1 1 auto;
+    border-right: none;
   }
 }
+
+
+

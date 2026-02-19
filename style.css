@@ -1,351 +1,254 @@
-/* ====================================
-   BASE + BACKGROUND
-==================================== */
+/* =====================================
+   HYBRID MATERIALS LAB – FULL STYLESHEET
+   Responsive version (2026)
+===================================== */
 
-html, body {
-  height: 100%;
+/* ---------- RESET ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-
-  /* Background image */
-  background-image: url("background-molecule.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: scroll;  /* better for mobile */
-  min-height: 100vh;
+  background: #f4f6f9;
+  color: #222;
 }
 
+/* ---------- GENERAL ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* ====================================
-   HEADER
-==================================== */
-
-.header-brand {
-  background:#182858;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:22px 12px;
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(to right, #1f2f5c, #2b3e7a);
+  color: white;
+  text-align: center;
+  padding: 1.2em 1em;
 }
 
 .header-brand-img {
   height: 120px;
-  width: auto;
-  display: block;
+  margin: 0 auto 10px;
 }
 
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* ---------- NAVIGATION ---------- */
 nav {
-  background: #182858;
-  padding: 0.9em;
-  text-align: center;
+  background: #1f2f5c;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.8em;
+  gap: 0.8em;
 }
 
 nav a {
-  margin: 0 1.2em;
-  text-decoration: none;
   color: white;
-  font-weight: 500;
+  padding: 0.4em 0.6em;
+  font-size: 1rem;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
-footer {
-  background:#182858;
-  color:#fff;
-  text-align:center;
-  padding:15px;
-}
-
-
-
-/* ====================================
-   MAIN LAYOUT (Homepage 2-column)
-==================================== */
-
+/* ---------- MAIN CONTAINER (HOME) ---------- */
 .container {
   display: flex;
   gap: 2em;
-  align-items: flex-start;
-
-  background: rgba(255,255,255,0.75);
-  padding: 30px;
-  border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Sidebar */
 .sidebar {
-  flex: 0 0 25%;
-  background: #f7f7f7;
-  padding: 1.5em;
-  border-right: 1px solid #ddd;
-}
-
-.main-content {
   flex: 1;
-  min-width: 0;
 }
 
-
-
-/* ====================================
-   FULL WIDTH PAGES (Artur, Members, Projects etc.)
-==================================== */
-
-.page-box{
-  background: rgba(255,255,255,0.65);
-  padding: 35px;
-  border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
+/* Main content */
+.main-content {
+  flex: 2;
 }
 
+/* ---------- PAGE BOX (OTHER PAGES) ---------- */
+.page-box {
+  background: white;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
 
-
-/* ====================================
-   ARTUR PAGE (Profile layout)
-   (Moved here from inline <style> in artur.html)
-==================================== */
-
+/* ---------- PROFILE PAGE ---------- */
 .profile-container {
   display: flex;
-  flex-direction: row;
-  gap: 2em;
+  gap: 40px;
   align-items: flex-start;
-  padding: 2em;
 }
 
 .profile-photo {
-  width: 28%;
-}
-
-.profile-photo img {
-  width: 100%;
-  border-radius: 10px;
+  flex: 1;
 }
 
 .profile-text {
-  text-align: justify;
-  width: 65%;
-  line-height: 1.6;
+  flex: 2;
 }
 
-.profile-text h2 {
-  margin-top: 0;
+/* ---------- RESEARCH SECTION ---------- */
+.research-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: center;
 }
 
-.section-title {
-  margin-top: 2em;
+.research-text {
+  flex: 1;
 }
 
-
-
-/* ====================================
-   LISTS
-==================================== */
-
-.news-list,
-.pub-list {
-  padding-left: 1.2em;
-  list-style-type: square;
+.research-text h2 {
+  margin-bottom: 10px;
 }
 
-.news-list li,
-.pub-list li {
-  margin-bottom: 1em;
+.research-image {
+  flex: 1;
 }
 
-
-
-/* ====================================
-   PARTNER LOGOS
-==================================== */
-
+/* ---------- PARTNER LOGOS ---------- */
 .partner-logos {
-  margin-top: 60px;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 60px;
+  margin-top: 60px;
   flex-wrap: wrap;
 }
 
 .partner-logos img {
   height: 70px;
   width: auto;
-  transition: transform 0.2s ease;
 }
 
-.partner-logos img:hover {
-  transform: scale(1.05);
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  background: #eaeaea;
+  margin-top: 60px;
 }
 
+/* ==================================================
+   ============== RESPONSIVE SECTION =================
+   ================================================== */
 
-
-/* ====================================
-   CARDS
-==================================== */
-
-.collaboration-card {
-  max-width: 1000px;
-  margin: 0 auto 25px auto;
-}
-
-/* ====== Mobile / responsive fixes ====== */
-
-/* Prevent images from overflowing */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Avoid horizontal scroll from long links/words */
-.page-box, .container, .main-content, .sidebar, .profile-text {
-  overflow-wrap: anywhere;
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Header logo smaller */
+
+  /* Header smaller */
   .header-brand-img {
     height: 80px;
   }
 
-  /* Nav: wrap links instead of forcing one long line */
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6em;
-    padding: 0.75em;
-    text-align: center;
-  }
-  nav a {
-    margin: 0;
-    padding: 0.35em 0.55em;
-    display: inline-block;
+  header h1 {
+    font-size: 1.1rem;
   }
 
-  /* Homepage: stack sidebar + content */
+  /* Navigation wraps nicely */
+  nav {
+    gap: 0.5em;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  /* HOME layout stacks */
   .container {
     flex-direction: column;
-    padding: 16px;
-    gap: 1.2em;
-  }
-  .sidebar {
-    flex: 1 1 auto;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
+    padding: 20px;
   }
 
-  /* Other pages: reduce padding */
-  .page-box {
-    padding: 18px;
+  .sidebar,
+  .main-content {
+    width: 100%;
   }
 
-  /* Artur page: stack photo + text */
+  /* Profile stacks */
   .profile-container {
     flex-direction: column;
-    padding: 1em;
   }
+
   .profile-photo,
   .profile-text {
     width: 100%;
   }
 
-  /* Partner logos: tighter on mobile */
-  .partner-logos {
-    gap: 24px;
-    margin-top: 30px;
+  /* Research stacks (FIX for one-letter issue) */
+  .research-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .research-text,
+  .research-image {
+    width: 100%;
+  }
+
+  /* Prevent weird word breaking */
+  h1, h2, h3 {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Partner logos grid on mobile */
+  .partner-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
   .partner-logos img {
     height: 50px;
   }
 
-  /* Team modal (if open on mobile): fit better */
-  .modal {
-    padding-top: 20px;
+  /* Page padding smaller */
+  .page-box {
+    padding: 20px;
+    margin: 20px;
   }
-  .modal-content {
-    width: 92%;
-    padding: 16px;
+
+  footer {
+    font-size: 0.8rem;
+    padding: 20px;
   }
 }
 
 @media (max-width: 400px) {
   nav a {
-    font-size: 0.95em;
-  }
-}
-
-
-/* ===============================
-   Mobile fixes: index + research
-   =============================== */
-
-img { max-width: 100%; height: auto; }
-
-/* --- INDEX footer / logos --- */
-@media (max-width: 768px) {
-
-  /* Social icons row: wrap nicely */
-  .social-icons, .social-links, .footer-social {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  /* Partner logos: switch from row to responsive grid */
-  .partner-logos {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    align-items: center;
-    justify-items: center;
-    margin-top: 24px;
-  }
-
-  .partner-logos img {
-    max-height: 55px;
-    width: auto;
-  }
-}
-
-/* --- RESEARCH "one letter per line" fix --- */
-@media (max-width: 768px) {
-
-  /* Whatever container holds each research topic row */
-  .research-item, .research-row, .topic-row {
-    display: flex;
-    flex-direction: column;   /* stack on mobile */
-    gap: 12px;
-  }
-
-  /* The text/title block MUST be allowed to be wide */
-  .research-text, .topic-text, .research-description {
-    width: 100% !important;
-    min-width: 0;
-  }
-
-  /* The small left column (numbers/labels) should NOT force tiny width */
-  .research-label, .topic-label, .left-col {
-    width: auto !important;
-    min-width: 0 !important;
-  }
-
-  /* Prevent “character wrapping” for headings */
-  h1, h2, h3, .research-title, .topic-title {
-    word-break: normal;
-    overflow-wrap: break-word;
-    hyphens: auto;
+    font-size: 0.85rem;
   }
 }

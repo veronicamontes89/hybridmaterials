@@ -12,11 +12,13 @@ body {
   padding: 0;
   line-height: 1.6;
 
+  /* Background image */
   background-image: url("background-molecule.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: scroll;   /* better for mobile */
+  background-attachment: scroll;  /* better for mobile */
+  min-height: 100vh;
 }
 
 
@@ -96,7 +98,7 @@ footer {
 
 
 /* ====================================
-   FULL WIDTH PAGE (Artur, Members, Projects etc.)
+   FULL WIDTH PAGES (Artur, Members, Projects etc.)
 ==================================== */
 
 .page-box{
@@ -105,6 +107,44 @@ footer {
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
+}
+
+
+
+/* ====================================
+   ARTUR PAGE (Profile layout)
+   (Moved here from inline <style> in artur.html)
+==================================== */
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-start;
+  padding: 2em;
+}
+
+.profile-photo {
+  width: 28%;
+}
+
+.profile-photo img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.profile-text {
+  text-align: justify;
+  width: 65%;
+  line-height: 1.6;
+}
+
+.profile-text h2 {
+  margin-top: 0;
+}
+
+.section-title {
+  margin-top: 2em;
 }
 
 
@@ -167,6 +207,23 @@ footer {
 ==================================== */
 
 @media (max-width: 700px){
+
+  /* Make the long menu usable on phone */
+  nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+  }
+  nav a{
+    margin: 0;                 /* override margin: 0 1.2em */
+    padding: 6px 10px;
+    display: inline-block;
+    line-height: 1.2;
+  }
+
+  /* Homepage container */
   .container{
     flex-direction: column;
     gap: 16px;
@@ -179,7 +236,30 @@ footer {
     flex: 1 1 auto;
     border-right: none;
   }
+
+  /* Artur page: stack photo + text instead of squeezing */
+  .profile-container{
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  .profile-photo{
+    width: 100%;
+    max-width: 420px;  /* optional */
+  }
+  .profile-text{
+    width: 100%;
+    line-height: 1.7;
+  }
+
+  /* Slightly smaller header logo on phone */
+  .header-brand-img{
+    height: 80px;
+  }
+
+  /* A bit less padding on phone */
+  .page-box{
+    padding: 16px;
+  }
 }
-
-
 

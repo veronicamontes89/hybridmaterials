@@ -27,13 +27,11 @@ body {
    HEADER
 ==================================== */
 
-.header-brand {
-  background: #182858;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 12px;
-}
+.header-brand { background:#182858; display:flex; justify-content:center; align-items:center; padding:18px 12px; }
+nav { background:#182858; }
+footer { background:#182858; color:#fff; }
+
+
 
 .header-brand-img {
   height: 120px;
@@ -139,17 +137,6 @@ nav a:hover {
 }
 
 
-/* ====================================
-   FOOTER
-==================================== */
-
-footer {
-  text-align: center;
-  padding: 1.2em;
-  background-color: #182858;
-  color: white;
-  margin-top: 40px;
-}
 
 
 
@@ -179,113 +166,17 @@ footer {
    RESPONSIVE
 ==================================== */
 
-@media (max-width: 900px) {
-
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar,
-  .main-content {
-    width: 100%;
-    border-right: none;
-  }
-
-  body {
-    background-size: 100%;
-  }
-
-  .partner-logos {
-    gap: 30px;
-  }
-
-  .partner-logos img {
-    height: 50px;
-  }
-
-
+@media (max-width: 900px){
+  .header-brand-img{ max-width: 92%; height:auto; }
 }
+
+
+
 .page-box{
   background: rgba(255,255,255,0.65);
   padding: 30px;
   border-radius: 10px;
   margin: 0;                 /* keep it flush left like you wanted */
-
-
-   /* =========================
-   MOBILE (keep SAME 2-column style)
-========================= */
-@media (max-width: 900px){
-
-  /* Header logo scales */
-  .header-brand-img{
-    height: auto;
-    max-width: 92%;
-  }
-
-  /* Nav wraps nicely */
-  nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-  }
-  nav a{
-    margin: 4px 8px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  /* IMPORTANT: keep 2 columns */
-  .container{
-    flex-direction: row;     /* <-- stays row */
-    gap: 12px;
-    padding: 12px;
-  }
-
-  .sidebar{
-    flex: 0 0 38%;           /* sidebar width on phone */
-    width: auto;
-    padding: 12px;
-  }
-
-  .main-content{
-    flex: 1;
-    min-width: 0;            /* prevents weird overflow */
-  }
-
-  /* Reduce text size a bit so 2 columns fits */
-  body{
-    font-size: 14px;
-    background-attachment: scroll; /* iOS fix */
-    background-position: center;
-  }
-
-  /* Make ALL images responsive */
-  img{
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Generic fix for “profile” layouts on other pages (Artur, Research, etc.) */
-  .profile-container{
-    flex-direction: row;     /* keep same style */
-    gap: 12px;
-    padding: 12px;
-  }
-  .profile-photo{
-    flex: 0 0 40%;
-    width: auto;
-  }
-  .profile-text{
-    flex: 1;
-    width: auto;
-    min-width: 0;
-  }
-
-  /* Full-width pages still full width */
-  .page-box{
-    padding: 12px;
-  }
+ }
+}
 }

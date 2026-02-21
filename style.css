@@ -163,23 +163,32 @@ nav a:hover {
 
 
 /* ====================================
-   RESPONSIVE
+   RESPONSIVE (MOBILE)
 ==================================== */
+@media (max-width: 900px) {
 
-@media (max-width: 768px) {
-  /* adjustments for phones/tablets */
-  h1 { font-size: 1.8rem; }
-  img { max-width: 100%; height: auto; }
-  .some-sidebar { display: none; }   /* hide if needed */
-}
+  .container {
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 15px;
+  }
 
+  .sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 
+  .page-box {
+    padding: 20px;
+  }
 
-.page-box{
-  background: rgba(255,255,255,0.65);
-  padding: 30px;
-  border-radius: 10px;
-  margin: 0;                 /* keep it flush left like you wanted */
- }
-}
+  nav a {
+    margin: 0.4em 0.6em;
+    font-size: 0.95rem;
+  }
+
+  .partner-logos img {
+    height: 55px;
+  }
+
 }

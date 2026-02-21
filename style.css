@@ -29,7 +29,12 @@ body {
 
 .header-brand { background:#182858; display:flex; justify-content:center; align-items:center; padding:18px 12px; }
 nav { background:#182858; }
-footer { background:#182858; color:#fff; }
+footer {
+  background: #182858;
+  color: #fff;
+  text-align: center;   /* ← esto lo centra */
+  padding: 15px 10px;   /* un poco de espacio vertical */
+}
 
 
 

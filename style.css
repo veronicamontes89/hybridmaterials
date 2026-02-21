@@ -166,7 +166,7 @@ nav a:hover {
    RESPONSIVE
 ==================================== */
 
-@media (max-width: auto){
+@media (max-width: 900px){
   .header-brand-img{ max-width: 92%; height:auto; }
 }
 

@@ -166,8 +166,11 @@ nav a:hover {
    RESPONSIVE
 ==================================== */
 
-@media (max-width: 900px){
-  .header-brand-img{ max-width: 92%; height:auto; }
+@media (max-width: 768px) {
+  /* adjustments for phones/tablets */
+  h1 { font-size: 1.8rem; }
+  img { max-width: 100%; height: auto; }
+  .some-sidebar { display: none; }   /* hide if needed */
 }
 
 

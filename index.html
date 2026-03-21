@@ -8,38 +8,55 @@
 <link rel="stylesheet" href="style.css?v=99">
 <style>
 
-
 .home-intro {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
   gap: 2rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  padding: 2rem;
+  overflow: hidden;
 }
 
 .home-text {
-  flex: 1 1 55%;
   min-width: 0;
 }
 
+.home-text h2 {
+  margin-top: 0;
+}
+
+.home-text p {
+  line-height: 1.7;
+}
+
+.home-text blockquote {
+  margin: 1.5rem 0 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid #d4a017;
+  font-style: italic;
+}
+
 .home-image {
-  flex: 1 1 45%;
   min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .home-image img {
   display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 460px;
   height: auto;
   border-radius: 12px;
-  margin: 0 auto;
+  object-fit: cover;
 }
 
-/* ONLY mobile */
 @media (max-width: 900px) {
   .home-intro {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
   }
 
   .home-image img {
@@ -79,16 +96,15 @@
 <ul class="pub-list">
 
 </ul>
-</aside><section class="home-intro">
+</aside>
+<section class="home-intro">
   <div class="home-text">
+    <h2>Welcome to the Hybrid Materials Laboratory</h2>
+    <p>We are an international research team established in <strong>2016</strong> at the <strong>Centre for Advanced Technologies of Adam Mickiewicz University (AMU)</strong>. Our work focuses on the <strong>design, synthesis, and functional integration of hybrid and low-dimensional materials</strong> for applications in energy storage, environmental remediation, and advanced sensing.</p>
+    <p>We invite you to <strong>explore our projects and meet our team</strong>, and we are always open to <strong>collaborations across disciplines</strong>. If you are enthusiastic about cutting-edge materials science, we are <strong>actively looking for motivated researchers and students</strong> to join us.</p>
 
-    
-<h2>Welcome to the Hybrid Materials Laboratory</h2>
-<p>We are an international research team established in <strong>2016</strong> at the <strong>Centre for Advanced Technologies of Adam Mickiewicz University (AMU)</strong>. Our work focuses on the <strong>design, synthesis, and functional integration of hybrid and low-dimensional materials</strong> for applications in energy storage, environmental remediation, and advanced sensing.</p>
-<p>We invite you to <strong>explore our projects and meet our team</strong>, and we are always open to <strong>collaborations across disciplines</strong>. If you are enthusiastic about cutting-edge materials science, we are <strong>actively looking for motivated researchers and students</strong> to join us.</p>
-</div>
-    
     <blockquote>Let's build the next generation of functional materials — together.</blockquote>
+  </div>
 
   <div class="home-image">
     <img src="group.jpg" alt="Hybrid Materials Laboratory group photo">

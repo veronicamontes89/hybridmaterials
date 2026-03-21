@@ -195,5 +195,60 @@ nav a:hover {
   .partner-logos img {
     height: 55px;
   }
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    margin: 0;
+    padding: 15px;
+  }
 
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 1em;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .main-content img {
+    max-width: 100%;
+    height: auto !important;
+  }
+
+  .main-content div[style*="gap: 3em"] {
+    flex-direction: column;
+    gap: 1.2em !important;
+    margin-top: 2em !important;
+  }
+
+  .main-content div[style*="gap: 3em"] img[src="group.jpg"] {
+    width: 100%;
+    max-width: 340px;
+    height: auto !important;
+  }
+
+  nav {
+    padding: 0.6em;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.35em 0.5em;
+    font-size: 0.92rem;
+  }
+
+  .header-brand-img {
+    height: 70px;
+    max-width: 100%;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.95rem;
+  }
+}
 }

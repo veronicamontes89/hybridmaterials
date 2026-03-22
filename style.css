@@ -193,6 +193,6 @@ nav a:hover {
   }
 
   .partner-logos img {
-    height: 55px;
+    height: auto;
   }
 }
